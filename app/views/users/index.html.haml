@@ -1,0 +1,19 @@
+= button_to "New User", new_user_path, method: "get"
+%br
+%br
+
+.user_info
+- @users.each do |u|
+	= u.name
+	= image_tag u.user_photo.url, :class => "user_photo"
+	= button_to "Delete User", "users/#{u.id}", {:action => "delete", :method => :delete}
+  
+.comments
+
+= form_for Comment.new do |f|
+	= f.label :comment
+	= f.text_field :content
+
+	= f.submit "Add Comment"
+
+

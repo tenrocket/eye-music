@@ -1,0 +1,7 @@
+= form_for @new_photo do |f|
+
+	= f.label :browse_images
+	%br
+	= f.file_field :image
+	%br
+	= f.submit "Add Image"

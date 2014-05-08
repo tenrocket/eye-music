@@ -1,0 +1,8 @@
+= button_to "New Photo", new_photo_path, method: "get"
+%br
+%br
+
+- @photos.each do |p|
+	%a.th{href: "/photos/#{p.id}"}
+		= image_tag p.image.url, :class => "image"
+

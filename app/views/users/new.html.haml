@@ -1,0 +1,9 @@
+= form_for @new_user do |f|
+
+	= f.label :name
+	= f.text_field :name
+	%br
+	= f.file_field :user_photo
+	%br
+	= f.submit "Create Profile"
+
