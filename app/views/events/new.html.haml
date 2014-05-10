@@ -1,0 +1,29 @@
+/ = form_for @new_event do |f|
+
+/ 	= f.label :browse_images
+/ 	%br
+/ 	= f.file_field :image
+/ 	%br
+/ 	= f.submit "Add Image"
+
+.comment_form_center
+	= form_for @new_event do |f|
+		= f.label :name
+		= f.text_field :name
+		%br
+		= f.label :location
+		= f.text_field :location
+		%br
+		= f.label :event_date
+		= f.date_select :event_date
+		%br
+		= f.label :upload_image
+		%br
+		= f.file_field :event_photo
+		= f.submit "Create Event"
+
+/ 	.comment_form
+/ 	= form_for @new_comment, url: comments_path, method: :post do |f|
+/ 		= f.hidden_field :commentable_id, value: @new_comment.commentable_id
+/ 		= f.hidden_field :commentable_type, value: @new_comment.commentable_type
+/ 		= f.text_field :content, :class => "form-control"

@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   resources :comments
   resources :photos
-  resources :songs
   resources :tags
   resources :users
+  resources :events
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

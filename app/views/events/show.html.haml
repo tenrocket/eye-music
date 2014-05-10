@@ -1,0 +1,18 @@
+= @event.name
+%br
+= @event.event_date
+%br
+= @event.location
+%br
+%br
+- @event.photos.each do |p|
+	= image_tag p.image.url
+
+%br
+= form_for @new_photo, method: :post do |f|
+	= f.hidden_field :photographic_id, value: @new_photo.photographic_id
+	= f.hidden_field :photographic_type, value: @new_photo.photographic_type
+	= f.label :browse_images
+	= f.file_field :image
+	%br
+	= f.submit "Add Image"

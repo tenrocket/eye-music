@@ -1,0 +1,10 @@
+Your Events
+= button_to "New Event", new_event_path, method: "get"
+
+.align_images
+	- @events.each do |e|
+		.large-3.small-6.columnsx
+			%a.th{href: "/events/#{e.id}"}
+				.resize_fit_center
+					= image_tag e.event_photo.url, :class => "image"
+

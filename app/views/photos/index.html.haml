@@ -1,8 +1,15 @@
+%h4 Tag your favorite memories with a song.
+
 = button_to "New Photo", new_photo_path, method: "get"
 %br
 %br
 
-- @photos.each do |p|
-	%a.th{href: "/photos/#{p.id}"}
-		= image_tag p.image.url, :class => "image"
+/ - @photos.each do |p|
+/ 	%a.th{href: "/photos/#{p.id}"}
+/ 		= image_tag p.image.url, :class => "image"
 
+- @photos.each do |p|
+	.large-3.small-6.columnsx
+		%a.th{href: "/photos/#{p.id}"}
+			.resize_fit_center
+				= image_tag p.image.url, :class => "image"
