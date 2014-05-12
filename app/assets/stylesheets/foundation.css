@@ -26,11 +26,13 @@ meta.foundation-data-attribute-namespace {
 
 .large-3.small-6.columnsx {
   display: -webkit-inline-box;
+  height: 310px;
+  width: 310px;
 }
 
 .resize_fit_center {
-    max-width: 100%;
-    max-height: 100%;
+    width: 300px;
+    height: 300px;
     vertical-align: middle;
 }
 

@@ -1,23 +1,47 @@
-= image_tag @photo.image.url, style: "width:auto;max-height:600px;"
+.contain-to-grid.sticky
+	.nav.top-bar
+		%a{href: "/"} Eye Music
+		%ul.nav.top-bar
+			%li
+				%a{href: "/photos"} Photos
+				%br
+				%br
+			%li
+				%a{href: "/events"} Events
+				%br
+				%br
+			%li
+				%a{href: "/users"} Profile
+
+.comment_container
+	.show_image
+		= image_tag @photo.image.url
+	.comment_form
+		= form_for @new_comment, method: :post do |f|
+			= f.hidden_field :commentable_id, value: @new_comment.commentable_id
+			= f.hidden_field :commentable_type, value: @new_comment.commentable_type
+			= f.text_field :content, :class => "form-control"
+
+			= f.submit "Leave Comment", :class => "btn btn-info"
+			%br
+			%br
+		= form_for @new_tag, url: tags_path, method: :post do |f|
+			= hidden_field_tag :photo_id, @photo.id
+			= f.text_field :tag_text
+
+			= f.submit "Add Tag"
+			%br
+		%h3 Tags
+		.tags
+			- @photo.tags.each do |f|
+				="#{f.tag_text},"
+
+%hr
 .comments
+	%h1 Comments
 	- @photo.comments.each do |c|
 		= c.content
-.tags
-	- @photo.tags.each do |f|
-		=f.tag_text
-
-.comment_form
-	= form_for @new_comment, method: :post do |f|
-		= f.hidden_field :commentable_id, value: @new_comment.commentable_id
-		= f.hidden_field :commentable_type, value: @new_comment.commentable_type
-		= f.text_field :content, :class => "form-control"
-
-		= f.submit "Leave Comment", :class => "btn btn-info"
 		%br
-
-	= form_for @new_tag, url: tags_path, method: :post do |f|
-		= hidden_field_tag :photo_id, @photo.id
-		= f.text_field :tag_text
-
-		= f.submit "Add Tag"
-		%br
+/ .tags
+/ 	- @photo.tags.each do |f|
+/ 		=f.tag_text

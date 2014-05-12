@@ -10,15 +10,30 @@
 .comment_form {
 	width: 500px;
 	margin-top: 100px;
-	margin-left: 20px;
+	margin-left: 90px;
+	margin-right: 90px;
+	margin-bottom: 20px;
+	height: 285px;
 	float: right;
 }
 
 .comments {
-	float:right;
-	margin-right: 20px;
+	text-align: center;
 }
 
 h1 {
 	float: right;
+}
+
+.show_image {
+	max-width: 600px;
+	max-height: 600px;
+	float: left;
+}
+
+.comment_container {
+	float: right;
+	width: 100%;
+	height: 405px;
+	background-image: url(http://www.designbolts.com/wp-content/uploads/2012/12/White-wall-Seamless-Pattern-For-Website-Background.jpg);
 }

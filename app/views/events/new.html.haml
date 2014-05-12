@@ -1,10 +1,17 @@
-/ = form_for @new_event do |f|
-
-/ 	= f.label :browse_images
-/ 	%br
-/ 	= f.file_field :image
-/ 	%br
-/ 	= f.submit "Add Image"
+.contain-to-grid.sticky
+	.nav.top-bar
+		%a{href: "/"} Eye Music
+		%ul.nav.top-bar
+			%li
+				%a{href: "/photos"} Photos
+				%br
+				%br
+			%li
+				%a{href: "/events"} Events
+				%br
+				%br
+			%li
+				%a{href: "/users"} Profile
 
 .comment_form_center
 	= form_for @new_event do |f|
@@ -21,9 +28,3 @@
 		%br
 		= f.file_field :event_photo
 		= f.submit "Create Event"
-
-/ 	.comment_form
-/ 	= form_for @new_comment, url: comments_path, method: :post do |f|
-/ 		= f.hidden_field :commentable_id, value: @new_comment.commentable_id
-/ 		= f.hidden_field :commentable_type, value: @new_comment.commentable_type
-/ 		= f.text_field :content, :class => "form-control"
